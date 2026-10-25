@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF7D4202-138A-409A-9D92-2968A4E1353D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExamenSonda</RootNamespace>
+    <AssemblyName>ExamenSonda</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-grid.css" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-reboot.css" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap.css" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap.min.css" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.bundle.js" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.js" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Plugins\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ar-tn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.bn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.br.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hi.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.km.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.oc.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.si.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ta.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.tg.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.uz-cyrl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.uz-latn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Plugins\datatables\media\css\buttons.dataTables.min.css" />
+    <Content Include="Plugins\datatables\media\css\dataTables.bootstrap.css" />
+    <Content Include="Plugins\datatables\media\css\dataTables.bootstrap.min.css" />
+    <Content Include="Plugins\datatables\media\css\dataTables.foundation.css" />
+    <Content Include="Plugins\datatables\media\css\dataTables.foundation.min.css" />
+    <Content Include="Plugins\datatables\media\css\dataTables.jqueryui.css" />
+    <Content Include="Plugins\datatables\media\css\dataTables.jqueryui.min.css" />
+    <Content Include="Plugins\datatables\media\css\Excel-icon.png" />
+    <Content Include="Plugins\datatables\media\css\jquery.dataTables.css" />
+    <Content Include="Plugins\datatables\media\css\jquery.dataTables.min.css" />
+    <Content Include="Plugins\datatables\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Plugins\datatables\media\images\sort_asc.png" />
+    <Content Include="Plugins\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="Plugins\datatables\media\images\sort_both.png" />
+    <Content Include="Plugins\datatables\media\images\sort_desc.png" />
+    <Content Include="Plugins\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="Plugins\datatables\media\js\buttons.flash.min.js" />
+    <Content Include="Plugins\datatables\media\js\buttons.html5.js" />
+    <Content Include="Plugins\datatables\media\js\buttons.html5.min.js" />
+    <Content Include="Plugins\datatables\media\js\buttons.print.min.js" />
+    <Content Include="Plugins\datatables\media\js\dataTables.bootstrap.js" />
+    <Content Include="Plugins\datatables\media\js\dataTables.bootstrap.min.js" />
+    <Content Include="Plugins\datatables\media\js\dataTables.buttons.min.js" />
+    <Content Include="Plugins\datatables\media\js\dataTables.foundation.js" />
+    <Content Include="Plugins\datatables\media\js\dataTables.foundation.min.js" />
+    <Content Include="Plugins\datatables\media\js\dataTables.jqueryui.js" />
+    <Content Include="Plugins\datatables\media\js\dataTables.jqueryui.min.js" />
+    <Content Include="Plugins\datatables\media\js\fnFindCellRowIndexes.js" />
+    <Content Include="Plugins\datatables\media\js\jquery.dataTables.js" />
+    <Content Include="Plugins\datatables\media\js\jquery.dataTables.min.js" />
+    <Content Include="Plugins\datatables\media\js\jszip.min.js" />
+    <Content Include="Plugins\datatables\media\js\pdfmake.min.js" />
+    <Content Include="Plugins\datatables\media\js\vfs_fonts.js" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.bootstrap.css" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.bootstrap.min.css" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.dataTables.css" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.dataTables.min.css" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.foundation.css" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.foundation.min.css" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.jqueryui.css" />
+    <Content Include="Plugins\datatables\responsive\css\responsive.jqueryui.min.css" />
+    <Content Include="Plugins\datatables\responsive\js\dataTables.responsive.js" />
+    <Content Include="Plugins\datatables\responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Plugins\datatables\responsive\js\responsive.bootstrap.js" />
+    <Content Include="Plugins\datatables\responsive\js\responsive.bootstrap.min.js" />
+    <Content Include="Plugins\datatables\responsive\js\responsive.foundation.js" />
+    <Content Include="Plugins\datatables\responsive\js\responsive.foundation.min.js" />
+    <Content Include="Plugins\datatables\responsive\js\responsive.jqueryui.js" />
+    <Content Include="Plugins\datatables\responsive\js\responsive.jqueryui.min.js" />
+    <Content Include="Plugins\jquery-ui\AUTHORS.txt" />
+    <Content Include="Plugins\jquery-ui\external\jquery\jquery.js" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Plugins\jquery-ui\index.html" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.css" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.js" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Plugins\jquery-ui\LICENSE.txt" />
+    <None Include="Plugins\jquery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Plugins\jquery\jquery-3.1.1.min.js" />
+    <Content Include="Plugins\jquery\jquery-3.1.1.slim.min.js" />
+    <Content Include="Plugins\jquery\jquery-3.3.1.js" />
+    <Content Include="Plugins\jquery\jquery-3.3.1.slim.js" />
+    <Content Include="Plugins\jquery\jquery.mtz.monthpicker.js" />
+    <Content Include="Scripts\Home\Index.init.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Code\Comunes\DtRequest.cs" />
+    <Compile Include="Code\Data\DataHelper.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Persona.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap.css.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\css\bootstrap.min.css.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.js.map" />
+    <Content Include="Plugins\bootstrap-4.2.1-dist\js\bootstrap.min.js.map" />
+    <Content Include="Plugins\jquery\jquery-3.3.1.min.map" />
+    <Content Include="Plugins\jquery\jquery-3.3.1.slim.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker.css.map" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Plugins\jquery-ui\package.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Plugins\datatables\plugins\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27063</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:27063/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
